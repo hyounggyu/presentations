@@ -1,0 +1,23 @@
+id: 2026-01-ai-agent-sw-vv-report
+year: 2026
+number: 1
+slug: ai-agent-sw-vv-report
+title: "인허가 문서 작성 AI Agent 설계: SoT와 Context 구조를 통한 사업화 가능성 탐색"
+subtitle: "SW V&V 예제에서 인허가 문서 AI Assistant reference implementation으로"
+date: 2026-05-31
+language: ko
+status: archived
+
+sources:
+  draft: draft.md
+  slides: slides.md
+  narration: narration.json
+  transcript: transcript.md
+  subtitles: youtube.srt
+
+assets:
+  images: images
+
+outputs:
+  build_dir: build/voiceover
+  final_video: exports/final.mp4

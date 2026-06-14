@@ -1,0 +1,4 @@
+version: 1
+display_name: "HG Presentation"
+short_description: "Author, caption, and render hg-presentations projects"
+default_prompt: "Use $hg-presentation to work with a presentation under contents/YYYY/NN-title."
