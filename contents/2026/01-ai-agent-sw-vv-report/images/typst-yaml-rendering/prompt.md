@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Explain why Typst is used and how Typst renders YAML SoT into document tables and traceability sections.
+Explain why Typst is used and how Typst renders YAML V&V Records into document tables and traceability sections.
 
 ## Prompt
 
@@ -10,15 +10,15 @@ Create a 16:9 hand-drawn whiteboard style educational diagram. Show a YAML file 
 
 The YAML file should contain simple structured rows such as "SR-001", "SR-004", "risk", "test". The Typst center should include short code-like labels: `yaml(...)`, `requirements-table(...)`, `traceability(...)`. The rendered document should show a requirements table and traceability section.
 
-Add a small note near Typst: "Markdown-like text + strong layout". Add another note on the arrow to the rendered document: "render SoT, not copy-paste".
+Add a small note near Typst: "Markdown-like text + strong layout". Add another note on the arrow to the rendered document: "render Records, not copy-paste".
 
-Main message: Typst reads YAML SoT and renders repeatable document sections. Keep the image clean and easy to scan.
+Main message: Typst reads YAML V&V Records and renders repeatable document sections. Keep the image clean and easy to scan.
 
-Style: hand-drawn whiteboard, black marker, muted blue for YAML/SoT, orange for Typst, neutral document page.
+Style: hand-drawn whiteboard, black marker, muted blue for YAML/Records, orange for Typst, neutral document page.
 
 ## Negative Prompt
 
-Do not show Microsoft Word, generic code editor screenshots, unreadable dense code, sci-fi UI, automatic approval, or final submission stamps. Do not imply that Typst changes SoT.
+Do not show Microsoft Word, generic code editor screenshots, unreadable dense code, sci-fi UI, automatic approval, or final submission stamps. Do not imply that Typst changes V&V Records.
 
 ## Output
 

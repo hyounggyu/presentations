@@ -2,26 +2,28 @@
 
 ## Purpose
 
-Show the four SWVNV agent skills as guardrails that help AI Agent work with SoT and Context without crossing boundaries.
+Show the SWVNV agent skill groups as guardrails that help AI Agent work with V&V Records and Context Materials without crossing boundaries.
 
 ## Prompt
 
-Create a 16:9 hand-drawn whiteboard style diagram for a presentation. Place "AI Agent" in the center. Around it, draw four tool cards:
+Create a 16:9 hand-drawn whiteboard style diagram for a presentation. Place "AI Agent" in the center. Around it, draw six compact tool cards:
 
-- "Context Retrieval" with a magnifying glass over registry cards
-- "Document Drafting" with a pencil and draft page
-- "Consistency Review" with a checklist and warning marker
-- "PDF Reader" with a PDF page and page zoom icon
+- "Guide" with a compass icon
+- "Context" with a magnifying glass over registry cards
+- "Records" with a checklist and traceability links
+- "Document" with a pencil and draft page
+- "Workbook" with an Excel-like sheet and import/export arrows
+- "Dev" with small Typst/Python/Git tool icons
 
-On the left, show two inputs: "SoT" as blue structured data cards and "Context" as green guide/PDF/review note cards. On the right, show two outputs: "Document Draft" and "Findings / Open Questions".
+On the left, show two inputs: "V&V Records" as blue structured data cards and "Context Materials" as green guide/PDF/review note cards. On the right, show two outputs: "Document Draft" and "Findings / Open Questions".
 
-Add a thin boundary line or small sign near the AI Agent: "Do not auto-change SoT". Make it clear that skills guide behavior and preserve the boundary between SoT and Context.
+Add a thin boundary line or small sign near the AI Agent: "Do not auto-change Records". Make it clear that skills guide behavior and preserve the boundary between V&V Records and Context Materials.
 
 Style: clean hand-drawn whiteboard, readable labels, muted colors, no long text.
 
 ## Negative Prompt
 
-Do not include "Approved", "Final Document", automatic SoT updates, "Candidate" as a central concept, sci-fi interfaces, glowing holograms, or dense small print.
+Do not include "Approved", "Final Document", automatic Records updates, "Candidate" as a central concept, sci-fi interfaces, glowing holograms, or dense small print.
 
 ## Output
 

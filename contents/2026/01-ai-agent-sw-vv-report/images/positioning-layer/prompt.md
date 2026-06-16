@@ -2,19 +2,19 @@
 
 ## Purpose
 
-Explain that SWVNV is a reasoning/document authoring layer that connects with ALM, eQMS, and RIM rather than replacing them.
+Explain that SWVNV is a lightweight regulatory documentation layer that connects with ALM, eQMS, RIM, structured authoring, and AI-assisted regulatory writing rather than replacing them.
 
 ## Prompt
 
-Create a 16:9 hand-drawn whiteboard style positioning diagram. In the center, draw a layer labeled "SWVNV Reasoning / Document Authoring Layer".
+Create a 16:9 hand-drawn whiteboard style positioning diagram. In the center, draw a layer labeled "SWVNV Lightweight Regulatory Documentation Layer".
 
-Below or around it, show three existing system boxes labeled "ALM", "eQMS", and "RIM". Connect them with thin dashed lines labeled "connects to". Do not use takeover arrows.
+Below or around it, show existing system boxes labeled "ALM", "eQMS", "RIM", "Structured Authoring", and "AI Regulatory Writing". Connect them with thin dashed lines labeled "connects to". Do not use takeover arrows.
 
-Above the central layer, show inputs "SoT" and "Context". On the right, show outputs "Document Drafts" and "Review Findings". Make the central layer look like an integration/assistant layer, not a replacement platform.
+Above the central layer, show inputs "V&V Records" and "Context Materials". On the right, show outputs "Document Drafts", "Review Findings", and "Traceability Checks". Make the central layer look like an integration/assistant layer, not a replacement platform.
 
 ## Negative Prompt
 
-Do not show SWVNV replacing ALM, eQMS, or RIM. Do not include monopoly imagery, dollar signs, approval stamps, sci-fi dashboards, or dense text.
+Do not show SWVNV replacing ALM, eQMS, RIM, structured authoring, or AI regulatory writing tools. Do not include monopoly imagery, dollar signs, approval stamps, sci-fi dashboards, or dense text.
 
 ## Output
 
