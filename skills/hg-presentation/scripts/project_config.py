@@ -13,10 +13,17 @@ ENV_PATTERN = re.compile(r"\$\{([A-Za-z_][A-Za-z0-9_]*)\}")
 
 
 @dataclass(frozen=True)
+class Segment:
+    index: int
+    text: str
+    pause_after_ms: int
+
+
+@dataclass(frozen=True)
 class Slide:
     index: int
     image: Path
-    text: str
+    segments: list[Segment]
 
 
 @dataclass(frozen=True)
@@ -89,6 +96,12 @@ def _positive_int(value: Any, field: str) -> int:
     return value
 
 
+def _non_negative_int(value: Any, field: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{field} must be a non-negative integer")
+    return value
+
+
 def _resolve_input(path_arg: str | Path, root: Path) -> tuple[Path, Path]:
     path = Path(path_arg).expanduser()
     if not path.is_absolute():
@@ -138,7 +151,7 @@ def load_project(project_path: str | Path) -> Project:
         raise ValueError("voice must be an object when provided")
 
     voice_id = resolve_env_value(voice_raw.get("voice_id", "${ELEVENLABS_VOICE_ID}"))
-    model_id = resolve_env_value(voice_raw.get("model_id", os.environ.get("ELEVENLABS_MODEL_ID", "eleven_multilingual_v2")))
+    model_id = resolve_env_value(voice_raw.get("model_id", os.environ.get("ELEVENLABS_MODEL_ID", "eleven_v3")))
     output_format = resolve_env_value(voice_raw.get("output_format", os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")))
 
     video_raw = raw.get("video", {})
@@ -158,16 +171,33 @@ def load_project(project_path: str | Path) -> Project:
         raise ValueError("slides must be a non-empty array")
 
     slides: list[Slide] = []
-    for idx, item in enumerate(slides_raw, start=1):
+    for slide_idx, item in enumerate(slides_raw, start=1):
         if not isinstance(item, dict):
-            raise ValueError(f"slides[{idx}] must be an object")
+            raise ValueError(f"slides[{slide_idx}] must be an object")
+        if "text" in item:
+            raise ValueError(f"slides[{slide_idx}].text is no longer supported; use slides[].segments[]")
         image_raw = resolve_env_value(item.get("image"))
-        text = resolve_env_value(item.get("text"))
         if not isinstance(image_raw, str) or not image_raw.strip():
-            raise ValueError(f"slides[{idx}].image is required")
-        if not isinstance(text, str) or not text.strip():
-            raise ValueError(f"slides[{idx}].text is required")
-        slides.append(Slide(index=idx, image=_resolve_project_path(presentation_dir, image_raw), text=text.strip()))
+            raise ValueError(f"slides[{slide_idx}].image is required")
+
+        segments_raw = item.get("segments")
+        if not isinstance(segments_raw, list) or not segments_raw:
+            raise ValueError(f"slides[{slide_idx}].segments must be a non-empty array")
+
+        segments: list[Segment] = []
+        for segment_idx, segment_raw in enumerate(segments_raw, start=1):
+            if not isinstance(segment_raw, dict):
+                raise ValueError(f"slides[{slide_idx}].segments[{segment_idx}] must be an object")
+            text = resolve_env_value(segment_raw.get("text"))
+            if not isinstance(text, str) or not text.strip():
+                raise ValueError(f"slides[{slide_idx}].segments[{segment_idx}].text is required")
+            pause_after_ms = _non_negative_int(
+                segment_raw.get("pause_after_ms", 350),
+                f"slides[{slide_idx}].segments[{segment_idx}].pause_after_ms",
+            )
+            segments.append(Segment(index=segment_idx, text=text.strip(), pause_after_ms=pause_after_ms))
+
+        slides.append(Slide(index=slide_idx, image=_resolve_project_path(presentation_dir, image_raw), segments=segments))
 
     return Project(
         path=path.resolve(),
@@ -185,8 +215,20 @@ def require_tools(*names: str) -> list[str]:
     return [name for name in names if shutil.which(name) is None]
 
 
-def audio_path(project: Project, slide: Slide) -> Path:
+def slide_audio_path(project: Project, slide: Slide) -> Path:
     return project.output_dir / "audio" / f"slide-{slide.index:03d}.mp3"
+
+
+def segment_audio_path(project: Project, slide: Slide, segment: Segment) -> Path:
+    return project.output_dir / "audio" / f"slide-{slide.index:03d}" / f"segment-{segment.index:03d}.mp3"
+
+
+def silence_audio_path(project: Project, duration_ms: int) -> Path:
+    return project.output_dir / "audio" / "silence" / f"silence-{duration_ms:04d}ms.mp3"
+
+
+def audio_path(project: Project, slide: Slide) -> Path:
+    return slide_audio_path(project, slide)
 
 
 def timeline_path(project: Project) -> Path:

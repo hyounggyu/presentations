@@ -9,12 +9,11 @@ from pathlib import Path
 from project_config import load_project, timeline_path
 
 
-SENTENCE_PATTERN = re.compile(r"[^.!?。！？\n]+[.!?。！？]?")
+AUDIO_TAG_PATTERN = re.compile(r"\[[^\]]+\]")
 
 
-def split_sentences(text: str) -> list[str]:
-    sentences = [match.group(0).strip() for match in SENTENCE_PATTERN.finditer(text)]
-    return [sentence for sentence in sentences if sentence]
+def strip_audio_tags(text: str) -> str:
+    return re.sub(r"\s+", " ", AUDIO_TAG_PATTERN.sub("", text)).strip()
 
 
 def wrap_caption(text: str, *, width: int = 42) -> str:
@@ -69,19 +68,21 @@ def generate(project_file: str) -> int:
 
     cues: list[tuple[float, float, str]] = []
     current_start = 0.0
-    for slide, item in zip(project.slides, timeline_slides, strict=True):
-        duration = float(item["duration"])
-        sentences = split_sentences(slide.text) or [slide.text]
-        weights = [max(1, len(sentence)) for sentence in sentences]
-        total_weight = sum(weights)
+    for slide_item in timeline_slides:
         slide_offset = current_start
-        for sentence, weight in zip(sentences, weights, strict=True):
-            cue_duration = duration * (weight / total_weight)
+        segments = slide_item.get("segments")
+        if not isinstance(segments, list) or not segments:
+            print(f"ERROR: timeline slide {slide_item.get('index')} has no segment metadata", file=sys.stderr)
+            return 1
+        for segment in segments:
+            duration = float(segment["duration"])
+            text = wrap_caption(strip_audio_tags(str(segment["text"])))
             cue_start = slide_offset
-            cue_end = slide_offset + cue_duration
-            cues.append((cue_start, cue_end, wrap_caption(sentence)))
-            slide_offset = cue_end
-        current_start += duration
+            cue_end = slide_offset + duration
+            if text:
+                cues.append((cue_start, cue_end, text))
+            slide_offset = cue_end + (int(segment.get("pause_after_ms", 0)) / 1000)
+        current_start += float(slide_item["duration"])
 
     srt_blocks = []
     for index, (start, end, text) in enumerate(cues, start=1):
@@ -94,7 +95,8 @@ def generate(project_file: str) -> int:
     transcript_lines = ["# 발표 Transcription", ""]
     for slide in project.slides:
         title = titles[slide.index - 1] if slide.index <= len(titles) else f"Slide {slide.index}"
-        transcript_lines.extend([f"## {slide.index}. {title}", "", slide.text, ""])
+        text = " ".join(strip_audio_tags(segment.text) for segment in slide.segments)
+        transcript_lines.extend([f"## {slide.index}. {title}", "", text, ""])
     transcript_path = project.presentation_dir / "transcript.md"
     transcript_path.write_text("\n".join(transcript_lines).rstrip() + "\n", encoding="utf-8")
 
@@ -104,7 +106,7 @@ def generate(project_file: str) -> int:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate YouTube SRT subtitles and transcript from narration and timeline.")
+    parser = argparse.ArgumentParser(description="Generate YouTube SRT subtitles and transcript from segment timeline.")
     parser.add_argument("project", help="Presentation directory or narration.json path")
     args = parser.parse_args()
 

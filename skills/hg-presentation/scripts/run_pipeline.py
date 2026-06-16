@@ -5,7 +5,7 @@ import argparse
 from build_timeline import build
 from generate_audio import generate
 from generate_subtitles import generate as generate_subtitles
-from project_config import audio_path, final_video_path, load_project, timeline_path, voiceover_video_path
+from project_config import audio_path, final_video_path, load_project, segment_audio_path, timeline_path, voiceover_video_path
 from render_video import render
 from validate_project import validate
 
@@ -19,6 +19,9 @@ def dry_run(project_file: str) -> int:
     print("Dry run output plan:")
     for slide in project.slides:
         print(f"  slide {slide.index:03d}: {slide.image} -> {audio_path(project, slide)}")
+        print(f"    segments: {len(slide.segments)}")
+        for segment in slide.segments:
+            print(f"      segment {segment.index:03d}: {segment_audio_path(project, slide, segment)}")
     print(f"  timeline: {timeline_path(project)}")
     print(f"  subtitles: {project.presentation_dir / 'youtube.srt'}")
     print(f"  transcript: {project.presentation_dir / 'transcript.md'}")

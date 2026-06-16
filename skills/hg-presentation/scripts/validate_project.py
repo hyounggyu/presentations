@@ -51,6 +51,8 @@ def validate(project_file: str, *, require_audio: bool = False, require_api_key:
     print(f"Presentation: {project.presentation_dir}")
     print(f"Narration: {project.path}")
     print(f"Slides: {len(project.slides)}")
+    print(f"Segments: {sum(len(slide.segments) for slide in project.slides)}")
+    print(f"Voice model: {project.voice.model_id}")
     print(f"Output directory: {project.output_dir}")
     print(f"Audio directory: {project.output_dir / 'audio'}")
     print(f"Timeline: {timeline_path(project)}")

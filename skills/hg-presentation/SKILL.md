@@ -23,37 +23,44 @@ build/voiceover/
 exports/
 ```
 
-Use `draft.md` for long-form thinking, `slides.md` for the slide structure, and `narration.json` as the executable voiceover input.
+Use `draft.md` for long-form thinking, `slides.md` for the slide structure, and `narration.json` as the executable voiceover input. Narration uses `slides[].segments[]`; the legacy `slides[].text` shape is not valid.
 
 ## Workflow
 
 Run scripts with `uv run python`.
 
-1. Validate the project:
+1. Convert legacy paragraph narration when needed:
+
+   ```sh
+   uv run python skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title --dry-run
+   uv run python skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title
+   ```
+
+2. Validate the project:
 
    ```sh
    uv run python skills/hg-presentation/scripts/validate_project.py contents/YYYY/NN-title --skip-api-key
    ```
 
-2. Generate or reuse slide audio:
+3. Generate or reuse segment and slide audio:
 
    ```sh
    uv run python skills/hg-presentation/scripts/generate_audio.py contents/YYYY/NN-title
    ```
 
-3. Build the timeline:
+4. Build the timeline:
 
    ```sh
    uv run python skills/hg-presentation/scripts/build_timeline.py contents/YYYY/NN-title
    ```
 
-4. Generate YouTube subtitles and transcript:
+5. Generate YouTube subtitles and transcript:
 
    ```sh
    uv run python skills/hg-presentation/scripts/generate_subtitles.py contents/YYYY/NN-title
    ```
 
-5. Render the video:
+6. Render the video:
 
    ```sh
    uv run python skills/hg-presentation/scripts/render_video.py contents/YYYY/NN-title --overwrite
@@ -70,5 +77,7 @@ uv run python skills/hg-presentation/scripts/run_pipeline.py contents/YYYY/NN-ti
 - Keep `timeline.json` paths relative to the presentation directory.
 - Keep generated YouTube captions in `youtube.srt`.
 - Keep the readable script in `transcript.md`.
+- Use ElevenLabs v3 audio tags sparingly at the start of segment text, for example `[calm]` or `[thoughtful][slight emphasis]`.
+- Segment audio is generated under `build/voiceover/audio/slide-001/segment-001.mp3` and concatenated into `build/voiceover/audio/slide-001.mp3`.
 - Store real API keys only in the repository root `.env`.
 - See `references/input-schema.md`, `references/elevenlabs.md`, and `references/ffmpeg.md` when changing script behavior.
