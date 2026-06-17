@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show why the public SWVNV implementation uses an Excel workbook as a human review/edit surface while keeping `records/*.yaml` as the canonical machine source for agents and scripts.
+Show why the public reference implementation uses an Excel workbook as a human review/edit surface while keeping `records/*.yaml` as the canonical machine source for agents and scripts.
 
 ## Slide Usage
 

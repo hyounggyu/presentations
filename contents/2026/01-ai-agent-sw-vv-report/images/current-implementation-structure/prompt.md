@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Summarize the current public SWVNV implementation as one slide: records YAML, Context Materials registry, Typst documents, shared renderers, scripts, agent skills, and workbook review surface.
+Summarize the current public reference implementation as one slide: records YAML, Context Materials registry, Typst documents, shared renderers, scripts, agent skills, and workbook review surface.
 
 ## Prompt
 

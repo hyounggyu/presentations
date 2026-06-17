@@ -24,7 +24,7 @@ Style: hand-drawn whiteboard, business presentation diagram, muted blue/green/or
 
 ## Negative Prompt
 
-Do not show SWVNV replacing ALM, eQMS, or RIM. Do not use an ultra-wide panoramic strip layout. Do not include aggressive market-share imagery, sci-fi UI, dollar signs, "approved" stamps, long captions, paragraphs, or dense tiny text.
+Do not show this project replacing ALM, eQMS, or RIM. Do not use an ultra-wide panoramic strip layout. Do not include aggressive market-share imagery, sci-fi UI, dollar signs, "approved" stamps, long captions, paragraphs, or dense tiny text.
 
 ## Output
 

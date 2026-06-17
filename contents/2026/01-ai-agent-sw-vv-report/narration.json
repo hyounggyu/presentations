@@ -132,7 +132,7 @@
       "image": "images/agent-skills/cover.png",
       "segments": [
         {
-          "text": "[warmly] AI Agent가 이 구조를 안정적으로 사용하려면 작업 방식도 고정해야 합니다. 그래서 repository에는 SWVNV 전용 agent skill을 둡니다. Guide와 Context skill은 시작점 안내, 자료 추가, 근거 검색을 담당합니다.",
+          "text": "[warmly] AI Agent가 이 구조를 안정적으로 사용하려면 작업 방식도 고정해야 합니다. 그래서 이 repository에는 agent skill을 둡니다. Guide와 Context skill은 시작점 안내, 자료 추가, 근거 검색을 담당합니다.",
           "pause_after_ms": 500
         },
         {
@@ -213,7 +213,7 @@
       "image": "images/positioning-layer/cover.png",
       "segments": [
         {
-          "text": "[calm] SWVNV의 포지션은 ALM, eQMS, RIM을 정면으로 대체하는 것이 아닙니다. 오히려 이 시스템들과 연결될 수 있는 lightweight regulatory documentation layer에 가깝습니다.",
+          "text": "[calm] 이 프로젝트의 포지션은 ALM, eQMS, RIM을 정면으로 대체하는 것이 아닙니다. 오히려 이 시스템들과 연결될 수 있는 lightweight regulatory documentation layer에 가깝습니다.",
           "pause_after_ms": 350
         },
         {
@@ -223,14 +223,14 @@
       ]
     },
     {
-      "image": "images/swvnv-conclusion/cover.png",
+      "image": "images/project-conclusion/cover.png",
       "segments": [
         {
           "text": "[confident] 정리하면, AI를 인허가 문서 작성에 제대로 활용하려면 사람이 이미 가진 자료를 AI Agent가 읽을 수 있는 구조로 바꿔야 합니다. V and V Records는 반복 정보의 기준을 제공하고, Context Materials는 작성과 판단의 근거를 제공합니다.",
           "pause_after_ms": 500
         },
         {
-          "text": "[confident] Typst와 script는 기준 데이터를 문서에 재현 가능하게 탑재하고, Agent Skills와 Workbook workflow는 사람이 검토 가능한 운영 표면을 만듭니다. SWVNV는 이 원칙을 공개 가능한 reference implementation으로 보여줍니다.",
+          "text": "[confident] Typst와 script는 기준 데이터를 문서에 재현 가능하게 탑재하고, Agent Skills와 Workbook workflow는 사람이 검토 가능한 운영 표면을 만듭니다. 이 프로젝트는 이 원칙을 공개 가능한 reference implementation으로 보여줍니다.",
           "pause_after_ms": 700
         }
       ]

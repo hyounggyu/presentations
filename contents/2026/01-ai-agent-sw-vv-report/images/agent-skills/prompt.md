@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show the SWVNV agent skill groups as guardrails that help AI Agent work with V&V Records and Context Materials without crossing boundaries.
+Show the repository agent skill groups as guardrails that help AI Agent work with V&V Records and Context Materials without crossing boundaries.
 
 ## Prompt
 
