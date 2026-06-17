@@ -47,23 +47,9 @@ date: 2026-05-31
 
 ## 핵심 설계
 
-인허가 문서 작성을 위한 정보를 두 가지로 나눈다.
+인허가 문서 작성 자료를 두 가지 역할로 나눈다.
 
 ![V&V Records and Context Materials](images/source-of-truth-context/cover.png)
-
-### V&V Records
-
-SoT 개념을 의료기기 소프트웨어 verification/validation documentation 도메인에서는 V&V Records로 구체화한다.
-
-- requirements
-- architecture
-- detailed design
-- risk controls
-- tests
-- AI models
-- datasets
-- performance metrics
-- documents
 
 ### Context Materials
 
@@ -76,7 +62,19 @@ Context Materials는 문서 작성과 판단에 필요한 근거다.
 - 리뷰 코멘트
 - 작업 메모
 
-`source_path`, `authority`, `related_records`, `summary`로 색인화한다.
+### V&V Records
+
+V&V Records는 여러 문서에서 반복 사용되는 기준 데이터다.
+
+- requirements
+- architecture
+- detailed design
+- risk controls
+- tests
+- AI models
+- datasets
+- performance metrics
+- documents
 
 ---
 

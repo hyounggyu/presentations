@@ -6,7 +6,7 @@
 
 ## 2. 핵심 설계
 
-그래서 이 발표에서는 정보를 두 가지로 나눕니다. Source of Truth라는 일반 개념을 medical device software verification and validation documentation 도메인에서는 V and V Records로 구체화합니다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI 모델, 데이터셋 같은 항목이 여기에 들어갑니다. Context Materials는 문서 작성과 판단에 필요한 근거입니다. 기존 문서, 규제 지침, 제출 템플릿, 회의록, 리뷰 코멘트가 여기에 속합니다. Registry에는 source path, authority, related records, summary를 남깁니다.
+그래서 이 발표에서는 자료를 두 가지 역할로 나눕니다. 먼저 Context Materials는 문서 작성과 판단에 필요한 근거 자료입니다. 기존 문서, 규제 지침, 제출 템플릿, 회의록, 리뷰 코멘트처럼 사람이 판단할 때 참고하는 자료가 여기에 들어갑니다. 반면 V and V Records는 여러 문서에서 반복 사용되는 기준 데이터입니다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI 모델, 데이터셋 같은 항목을 구조화해 두고, 문서 생성과 traceability 확인의 기준으로 사용합니다.
 
 ## 3. AI Agent의 문서 작성 방식
 
