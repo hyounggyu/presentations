@@ -29,7 +29,7 @@
       "image": "images/source-of-truth-context/cover.png",
       "segments": [
         {
-          "text": "[warmly] 그래서 이 발표에서는 정보를 두 가지로 나눕니다. Source of Truth라는 일반 개념을 SW V and V 도메인에서는 V and V Records로 구체화합니다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI 모델, 데이터셋 같은 항목이 여기에 들어갑니다.",
+          "text": "[warmly] 그래서 이 발표에서는 정보를 두 가지로 나눕니다. Source of Truth라는 일반 개념을 medical device software verification and validation documentation 도메인에서는 V and V Records로 구체화합니다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI 모델, 데이터셋 같은 항목이 여기에 들어갑니다.",
           "pause_after_ms": 500
         },
         {
@@ -97,7 +97,7 @@
           "pause_after_ms": 350
         },
         {
-          "text": "[thoughtful][slight emphasis] 이 구조는 Git native source와 사람 친화적인 review surface를 함께 제공한다는 점에서 제품화 포인트가 됩니다.",
+          "text": "[thoughtful][slight emphasis] 이 구조는 Git native source와 사람 친화적인 review surface를 함께 제공해, 사람이 검토 가능한 운영 표면을 만듭니다.",
           "pause_after_ms": 700
         }
       ]
@@ -161,7 +161,7 @@
           "pause_after_ms": 500
         },
         {
-          "text": "[calm] 이 예제는 Software Plan, SRS, Architecture, Detailed Design, 여러 테스트 문서, 그리고 SW V and V Report를 포함한 문서 패키지를 생성합니다.",
+          "text": "[calm] 이 예제는 Software Plan, SRS, Architecture, Detailed Design, 여러 테스트 문서, 그리고 V and V Report를 포함한 software lifecycle documents와 verification and validation evidence package를 생성합니다.",
           "pause_after_ms": 700
         }
       ]
@@ -187,37 +187,7 @@
           "pause_after_ms": 350
         },
         {
-          "text": "[calm] 하지만 제품 의도, 위험 통제의 충분성, 검증 방법의 타당성, Records 변경 승인, 제출 가능한 품질에 대한 최종 판단은 사람이 해야 합니다. 이 경계가 분명해야 AI를 실무에 안전하게 넣을 수 있습니다.",
-          "pause_after_ms": 700
-        }
-      ]
-    },
-    {
-      "image": "images/productization-path/cover.png",
-      "segments": [
-        {
-          "text": "[calm] 제품화 가능성을 보면, 현재 구현은 reference implementation이지만 몇 가지 제품 단위로 분리할 수 있습니다.",
-          "pause_after_ms": 350
-        },
-        {
-          "text": "[calm] Repository template, V and V Records와 Context Materials authoring tool, controlled workbook, records validation과 traceability service, 규제 context ingestion, Typst 기반 문서 생성 서비스, AI review assistant가 그 예입니다.",
-          "pause_after_ms": 350
-        },
-        {
-          "text": "[thoughtful][slight emphasis] 즉 이 프로젝트는 하나의 완성된 제품이라기보다, 어떤 기능 단위가 제품화될 수 있는지 탐색하는 구조입니다.",
-          "pause_after_ms": 700
-        }
-      ]
-    },
-    {
-      "image": "images/positioning-layer/cover.png",
-      "segments": [
-        {
-          "text": "[calm] 이 프로젝트의 포지션은 ALM, eQMS, RIM을 정면으로 대체하는 것이 아닙니다. 오히려 이 시스템들과 연결될 수 있는 lightweight regulatory documentation layer에 가깝습니다.",
-          "pause_after_ms": 350
-        },
-        {
-          "text": "[calm] V and V Records와 Context Materials를 agent-readable하게 구성하고, 문서 초안과 review finding을 만들어, ALM, eQMS, RIM, structured authoring, AI assisted regulatory writing 사이에서 인허가 문서 작성과 검토를 돕는 역할을 목표로 합니다.",
+          "text": "[calm] 하지만 제품 의도, 위험 통제의 충분성, verification 방법의 적절성, validation과 intended use 판단, Records 변경 승인, 제출 가능한 품질에 대한 최종 판단은 사람이 해야 합니다. 이 경계가 분명해야 AI를 실무에 안전하게 넣을 수 있습니다.",
           "pause_after_ms": 700
         }
       ]

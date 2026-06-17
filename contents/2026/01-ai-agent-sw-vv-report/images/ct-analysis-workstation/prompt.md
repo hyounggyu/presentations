@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Introduce the fictional CT Analysis Workstation example and the generated SW V&V document package.
+Introduce the fictional CT Analysis Workstation example and the generated software lifecycle and V&V evidence document package.
 
 ## Prompt
 
@@ -15,13 +15,13 @@ Around the monitor, show five feature labels with small icons:
 - "AI segmentation overlay"
 - "Report export"
 
-On the right, show a stack of documents labeled "8 SW V&V docs". Include small labels: "Plan", "SRS", "Architecture", "Design", "Tests", "V&V Report".
+On the right, show a stack of documents labeled "Lifecycle + V&V evidence package". Include small labels: "Plan", "SRS", "Architecture", "Design", "Tests", "V&V Report".
 
 Add a small note near AI segmentation: "assistive, not autonomous diagnosis". Keep the tone technical and clean, not medical-device marketing.
 
 ## Negative Prompt
 
-Do not show real patient photos, diagnosis claims, approval stamps, hospital marketing imagery, sci-fi UI, or a polished product ad.
+Do not show real patient photos, diagnosis claims, approval stamps, hospital marketing imagery, sci-fi UI, or a polished product ad. Do not reuse the previous short SW V and V document-package labels.
 
 ## Output
 

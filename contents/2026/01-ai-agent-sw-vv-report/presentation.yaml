@@ -2,8 +2,8 @@ id: 2026-01-ai-agent-sw-vv-report
 year: 2026
 number: 1
 slug: ai-agent-sw-vv-report
-title: "인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조를 통한 사업화 가능성 탐색"
-subtitle: "SW V&V 예제에서 인허가 문서 AI Assistant reference implementation으로"
+title: "인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조"
+subtitle: "software verification and validation 문서 예제에서 인허가 문서 AI Assistant reference implementation으로"
 date: 2026-05-31
 language: ko
 status: archived

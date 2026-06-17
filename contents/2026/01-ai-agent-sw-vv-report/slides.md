@@ -1,10 +1,10 @@
 ---
-title: "인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조를 통한 사업화 가능성 탐색"
-subtitle: SW V&V 예제에서 인허가 문서 AI Assistant reference implementation으로
+title: "인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조"
+subtitle: software verification and validation 문서 예제에서 인허가 문서 AI Assistant reference implementation으로
 date: 2026-05-31
 ---
 
-# 인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조를 통한 사업화 가능성 탐색
+# 인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조
 
 ## 왜 기존 방식이 힘든가
 
@@ -53,7 +53,7 @@ date: 2026-05-31
 
 ### V&V Records
 
-SoT 개념을 SW V&V 도메인에서는 V&V Records로 구체화한다.
+SoT 개념을 의료기기 소프트웨어 verification/validation documentation 도메인에서는 V&V Records로 구체화한다.
 
 - requirements
 - architecture
@@ -133,7 +133,7 @@ V&V Records는 YAML로 만들고, Context Materials는 registry로 관리한다.
 
 ## 사람용 Workbook, Agent용 YAML
 
-YAML만으로는 실무자 접근성이 낮다. Excel workbook round-trip이 제품화 포인트가 된다.
+YAML만으로는 실무자 접근성이 낮다. Excel workbook round-trip은 사람 검토와 기준 데이터 관리를 연결한다.
 
 ![V&V Records Workbook](images/vnv-records-workbook/cover.png)
 
@@ -201,13 +201,13 @@ Skill은 기능 목록이 아니라 AI가 경계를 넘지 않게 하는 운영 
 
 ## CT Analysis Workstation 예제
 
-가상의 독립형 CT 분석 소프트웨어를 대상으로 8개의 SW V&V 문서를 생성한다.
+가상의 독립형 CT 분석 소프트웨어를 대상으로 8개의 software lifecycle and V&V evidence 문서를 생성한다.
 
 ![CT Analysis Workstation](images/ct-analysis-workstation/cover.png)
 
 - CT DICOM import, image viewing, ROI/HU measurement
 - AI segmentation overlay는 보조 기능이며 자동 진단이 아니다.
-- Software Plan, SRS, Architecture, Detailed Design, Test, SW V&V Report를 생성한다.
+- Software Plan, SRS, Architecture, Detailed Design, Test, V&V Report를 생성한다.
 
 ---
 
@@ -233,38 +233,7 @@ AI Agent는 자료를 찾고, 초안을 만들고, 불일치와 누락을 발견
   records/context retrieval, drafting, traceability gap review, open question 정리
 
 - 사람이 판단하는 일
-  제품 의도, 위험 통제 충분성, 검증 타당성, records 변경 승인, 제출 가능 품질
-
----
-
-## 제품화 가능성 탐색
-
-현재 구현은 reference implementation이지만, 제품화 가능한 단위가 보인다.
-
-![Productization path](images/productization-path/cover.png)
-
-- Repository template
-- V&V Records / Context Materials authoring tool
-- Controlled V&V Records Workbook
-- Records validation / traceability service
-- Regulatory context ingestion
-- Typst document generation service
-- AI review assistant
-
----
-
-## 포지션
-
-이 프로젝트는 ALM, eQMS, RIM을 정면으로 대체하지 않는다.
-
-![Positioning layer](images/positioning-layer/cover.png)
-
-핵심 포지션은 V&V Records와 Context Materials를 agent-readable하게 구성하는
-Git-native, transparent, lightweight regulatory documentation layer다.
-
-ALM, eQMS, RIM, structured authoring, AI-assisted regulatory writing과 연결된다.
-
----
+  제품 의도, 위험 통제 충분성, verification 방법의 적절성, validation/intended use 판단, records 변경 승인, 제출 가능 품질
 
 ## 결론
 

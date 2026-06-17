@@ -1,6 +1,6 @@
-# 인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조를 통한 사업화 가능성 탐색
+# 인허가 문서 작성 AI Agent 설계: V&V Records와 Context Materials 구조
 
-부제: SW V&V 예제에서 인허가 문서 AI Assistant reference implementation으로
+부제: software verification and validation 문서 예제에서 인허가 문서 AI Assistant reference implementation으로
 
 ## 발표 목적
 
@@ -8,10 +8,10 @@
 
 AI를 인허가 문서 작성에 제대로 활용하려면 두 정보 층을 구분해야 한다.
 
-- 여러 문서 생성, 검증, 추적에 직접 사용되는 V&V Records
+- software lifecycle 산출물과 V&V evidence를 일관되게 생성, 확인, 추적하는 기준 기록인 V&V Records
 - 문서 작성과 판단에 필요한 기존 문서, 가이드, 회의록, 리뷰, 메모 같은 Context Materials
 
-이 프로젝트는 SoT라는 일반 개념을 SW V&V 도메인에서는 V&V Records로 구체화해 실행해 보는 reference implementation이다. 현재 CT Analysis Workstation SW V&V 패키지는 전체 프로젝트의 목적이 아니라 첫 번째 포함 예제다.
+이 프로젝트는 SoT라는 일반 개념을 의료기기 소프트웨어 verification/validation documentation 도메인에서는 V&V Records로 구체화해 실행해 보는 reference implementation이다. 현재 CT Analysis Workstation 문서 패키지는 전체 프로젝트의 목적이 아니라 첫 번째 포함 예제다.
 
 ## 핵심 메시지
 
@@ -21,7 +21,7 @@ AI Agent는 문서를 대신 승인하는 주체가 아니다. AI Agent는 V&V R
 
 ## 문제 정의
 
-IEC 62304 기반 SW V&V Report 같은 문서에는 요구사항, 설계, 위험 통제, 테스트, AI model metadata, dataset, performance metric, traceability matrix가 반복적으로 등장한다.
+IEC 62304 기반 소프트웨어 lifecycle 산출물과 V&V evidence 문서에는 요구사항, 설계, 위험 통제, 테스트, AI model metadata, dataset, performance metric, traceability matrix가 반복적으로 등장한다.
 
 요구사항 하나가 추가되면 관련 설계 항목, 위험 통제, 테스트 케이스, 보고서 요약, 추적성 표가 함께 바뀐다. 또한 실제 작성 과정에서는 기존 문서, 회의록, 리뷰 코멘트, 내부 작성 가이드, 규제 지침, 테스트 로그 같은 자료가 계속 참고된다.
 
@@ -38,7 +38,7 @@ IEC 62304 기반 SW V&V Report 같은 문서에는 요구사항, 설계, 위험 
 
 ```text
 records/
-  V&V 문서 생성, 검증, 추적에 직접 사용되는 관리 기록
+  software lifecycle 산출물과 V&V evidence를 일관되게 생성, 확인, 추적하는 기준 기록
 
 contexts/registry.yaml
   문서 작성과 판단에 필요한 Context Materials 색인
@@ -47,7 +47,7 @@ optional findings / open questions
   사용자가 요청할 때만 남기는 파생 검토 산출물
 ```
 
-V&V Records는 여러 문서에서 반복 사용되는 기준 데이터다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI model metadata, dataset, performance metric, document metadata 같은 Record Item을 포함한다.
+V&V Records는 software lifecycle 산출물과 V&V evidence를 일관되게 생성, 확인, 추적하기 위해 여러 문서에서 반복 사용되는 기준 데이터다. 요구사항, 아키텍처, 상세 설계, 위험 통제, 테스트, AI model metadata, dataset, performance metric, document metadata 같은 Record Item을 포함한다.
 
 Context Materials는 문서 작성과 판단에 필요한 근거다. 예를 들어 기존 문서, 가이드 문서, 법령/고시/지침, 회의록, 리뷰 코멘트, 제출 템플릿, 작업 메모가 여기에 속한다. Registry에는 `source_path`, `authority`, `related_records`, `summary`를 남긴다.
 
@@ -123,7 +123,7 @@ Skill의 역할은 AI에게 "무엇을 할 수 있는지"만 알려주는 것이
 
 기본 예제는 CT DICOM import, image viewing, ROI/HU measurement, assistive AI segmentation overlay, measurement report export를 다루는 가상 독립형 소프트웨어다. AI segmentation output은 보조 기능이며 자동 진단이 아니다.
 
-이 예제는 다음 8개 SW V&V 문서를 생성한다.
+이 예제는 다음 8개의 software lifecycle and V&V evidence 문서를 생성한다.
 
 - Software Development Plan
 - Software Requirements Specification
@@ -138,21 +138,7 @@ Skill의 역할은 AI에게 "무엇을 할 수 있는지"만 알려주는 것이
 
 AI Agent가 도울 수 있는 일은 관련 V&V Records 항목 찾기, 관련 Context Materials 찾기, 문서 초안 작성, traceability gap 후보 탐지, review comment 반영 여부 점검, context 기반 Records 변경 가능성 발견과 질문 정리, 변경 영향 요약이다.
 
-사람이 직접 판단해야 하는 일은 요구사항이 실제 제품 의도와 맞는지, 위험 통제가 충분한지, 검증 방법이 규제적으로 타당한지, 테스트 결과가 승인 가능한지, context 기반 변경 가능성을 V&V Records 변경으로 승인할지, 문서가 제출 가능한 품질인지다.
-
-## 제품화 가능성 탐색
-
-현재 파일 기반 구조는 reference implementation이지만, 제품화 관점에서는 몇 가지 단위로 분리해 볼 수 있다.
-
-- 개발자와 컨설턴트용 repository template
-- YAML을 직접 쓰지 않아도 V&V Records와 Context Materials를 관리할 수 있는 authoring tool
-- Controlled V&V Records Workbook
-- Records validation / traceability service
-- MFDS, FDA, IEC guide와 기존 문서를 registry화하는 regulatory context ingestion
-- Typst 기반 PDF 문서 생성과 traceability table 자동화
-- context retrieval, drafting, consistency review, open question 정리를 돕는 AI review assistant
-
-이 프로젝트의 차별점은 ALM, eQMS, RIM을 정면으로 대체하는 것이 아니다. 핵심 포지션은 V&V Records와 Context Materials를 agent-readable하게 구성하는 Git-native, transparent, lightweight regulatory documentation layer다. 이 layer는 ALM, eQMS, RIM, structured authoring, AI-assisted regulatory writing과 연결될 수 있다.
+사람이 직접 판단해야 하는 일은 요구사항이 실제 제품 의도와 맞는지, 위험 통제가 충분한지, verification 방법이 적절한지, validation과 intended use 판단이 타당한지, 테스트 결과가 승인 가능한지, context 기반 변경 가능성을 V&V Records 변경으로 승인할지, 문서가 제출 가능한 품질인지다.
 
 ## 결론
 
