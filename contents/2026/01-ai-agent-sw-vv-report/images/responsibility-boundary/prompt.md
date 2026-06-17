@@ -25,7 +25,7 @@ Put a clear vertical boundary line between columns labeled "responsibility bound
 
 ## Negative Prompt
 
-Do not show AI replacing people, automatic approval, rubber stamps saying approved, legal judgement by AI, sci-fi UI, or dense text.
+Do not show AI replacing people, automatic approval, rubber stamps saying approved, legal judgement by AI, sci-fi UI, or dense text. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

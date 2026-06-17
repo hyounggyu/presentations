@@ -18,7 +18,7 @@ Style: hand-drawn whiteboard, black marker, muted blue for YAML/Records, orange 
 
 ## Negative Prompt
 
-Do not show Microsoft Word, generic code editor screenshots, unreadable dense code, sci-fi UI, automatic approval, or final submission stamps. Do not imply that Typst changes V&V Records.
+Do not show Microsoft Word, generic code editor screenshots, unreadable dense code, sci-fi UI, automatic approval, or final submission stamps. Do not imply that Typst changes V&V Records. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

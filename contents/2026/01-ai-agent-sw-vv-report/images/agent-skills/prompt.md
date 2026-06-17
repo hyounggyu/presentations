@@ -23,7 +23,7 @@ Style: clean hand-drawn whiteboard, readable labels, muted colors, no long text.
 
 ## Negative Prompt
 
-Do not include "Approved", "Final Document", automatic Records updates, "Candidate" as a central concept, sci-fi interfaces, glowing holograms, or dense small print.
+Do not include "Approved", "Final Document", automatic Records updates, "Candidate" as a central concept, sci-fi interfaces, glowing holograms, or dense small print. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

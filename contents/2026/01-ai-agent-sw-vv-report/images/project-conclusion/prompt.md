@@ -19,7 +19,7 @@ Main message: structured records, evidence, rendering, guardrails, and human rev
 
 ## Negative Prompt
 
-Do not show final approval by AI, submission stamps, sci-fi UI, abstract glowing orbs, or long paragraphs.
+Do not show final approval by AI, submission stamps, sci-fi UI, abstract glowing orbs, or long paragraphs. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

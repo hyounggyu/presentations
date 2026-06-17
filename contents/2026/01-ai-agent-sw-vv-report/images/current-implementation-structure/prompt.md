@@ -23,7 +23,7 @@ Style: hand-drawn whiteboard, black marker, muted blue for records, green for Co
 
 ## Negative Prompt
 
-Do not include complex repository trees beyond the seven named blocks, tiny code, sci-fi dashboards, glowing UI, automatic approval, "Candidate", or "Final Document". Avoid long captions and dense labels.
+Do not include complex repository trees beyond the seven named blocks, tiny code, sci-fi dashboards, glowing UI, automatic approval, "Candidate", or "Final Document". Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/". Avoid long captions and dense labels.
 
 ## Output
 

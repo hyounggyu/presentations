@@ -19,7 +19,7 @@ Add a short arrow label: "read once -> render many sections". Keep the image foc
 
 ## Negative Prompt
 
-Do not include dense unreadable code, fake IDE chrome, Microsoft Word, automatic approval, sci-fi UI, or final submission stamps.
+Do not include dense unreadable code, fake IDE chrome, Microsoft Word, automatic approval, sci-fi UI, or final submission stamps. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

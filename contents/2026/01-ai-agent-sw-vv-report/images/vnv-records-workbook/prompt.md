@@ -25,12 +25,13 @@ Main message: Excel is the practical human interface, YAML remains the agent-rea
 
 ## Negative Prompt
 
-Do not show Excel as the canonical source. Do not show automatic approval, direct unreviewed update arrows, submission stamps, sci-fi dashboards, glowing UI, dense tables with tiny text, or brand logos.
+Do not show Excel as the canonical source. Do not show automatic approval, direct unreviewed update arrows, submission stamps, sci-fi dashboards, glowing UI, dense tables with tiny text, or brand logos. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Style Constraints
 
 - 16:9 aspect ratio
 - Hand-drawn whiteboard style, clean and readable
+- Match the hand-drawn marker style of the other deck images; avoid flat vector flowchart styling
 - Muted blue for YAML records, subtle yellow for workbook, green for validation
 - Minimal embedded text
 - Professional regulatory software documentation tone

@@ -22,7 +22,7 @@ The image should emphasize that Script carries V&V Records into the draft as can
 
 ## Negative Prompt
 
-Do not include "Candidate", "Records Change Candidate", "Context to Records", a Context-to-Records update arrow, a direct "Records -> AI Agent" arrow, automatic approval, final submission stamp, "Approved", "Final Document", or any visual suggesting that AI modifies Records or replaces human judgment. Avoid sci-fi UI, glowing holograms, dense tiny text, long paragraphs, bottom explanatory text boxes, caption panels, brand logos, and complex multi-step workflow details.
+Do not include "Candidate", "Records Change Candidate", "Context to Records", a Context-to-Records update arrow, a direct "Records -> AI Agent" arrow, automatic approval, final submission stamp, "Approved", "Final Document", or any visual suggesting that AI modifies Records or replaces human judgment. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/". Avoid sci-fi UI, glowing holograms, dense tiny text, long paragraphs, bottom explanatory text boxes, caption panels, brand logos, and complex multi-step workflow details.
 
 ## Style Constraints
 

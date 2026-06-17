@@ -16,7 +16,7 @@ Main message: AI does not invent the structure; it reads structured versions of 
 
 ## Negative Prompt
 
-Do not show AI replacing the person, automatic approval, sci-fi UI, glowing holograms, dense tiny text, or a fully polished stock infographic. Do not include "Final Document" or "Approved".
+Do not show AI replacing the person, automatic approval, sci-fi UI, glowing holograms, dense tiny text, or a fully polished stock infographic. Do not include "Final Document" or "Approved". Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

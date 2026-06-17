@@ -14,7 +14,7 @@ Main message: Context Materials can suggest a possible Records change, but the a
 
 ## Negative Prompt
 
-Do not include "Candidate" as the main concept, automatic approval, direct Context-to-Records update arrows, "Accepted", "Final Document", or sci-fi UI.
+Do not include "Candidate" as the main concept, automatic approval, direct Context-to-Records update arrows, "Accepted", "Final Document", or sci-fi UI. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 

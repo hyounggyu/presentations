@@ -14,7 +14,7 @@ Above the central layer, show inputs "V&V Records" and "Context Materials". On t
 
 ## Negative Prompt
 
-Do not show this project replacing ALM, eQMS, RIM, structured authoring, or AI regulatory writing tools. Do not include monopoly imagery, dollar signs, approval stamps, sci-fi dashboards, or dense text.
+Do not show this project replacing ALM, eQMS, RIM, structured authoring, or AI regulatory writing tools. Do not include monopoly imagery, dollar signs, approval stamps, sci-fi dashboards, or dense text. Do not use visible labels "SWVNV", "Source of Truth", "SoT YAML", "related_sot", or "sot/".
 
 ## Output
 
