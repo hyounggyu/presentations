@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .DS_Store
 build/
+output/
+tmp/
+.pytest_cache/
+*.log
