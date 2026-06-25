@@ -32,44 +32,44 @@ Run scripts with `uv run python`.
 1. Convert legacy paragraph narration when needed:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title --dry-run
-   uv run python skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title
+   uv run python .agents/skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title --dry-run
+   uv run python .agents/skills/hg-presentation/scripts/segment_narration.py contents/YYYY/NN-title
    ```
 
 2. Validate the project:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/validate_project.py contents/YYYY/NN-title --skip-api-key
+   uv run python .agents/skills/hg-presentation/scripts/validate_project.py contents/YYYY/NN-title --skip-api-key
    ```
 
 3. Generate or reuse segment and slide audio:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/generate_audio.py contents/YYYY/NN-title
+   uv run python .agents/skills/hg-presentation/scripts/generate_audio.py contents/YYYY/NN-title
    ```
 
 4. Build the timeline:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/build_timeline.py contents/YYYY/NN-title
+   uv run python .agents/skills/hg-presentation/scripts/build_timeline.py contents/YYYY/NN-title
    ```
 
 5. Generate YouTube subtitles and transcript:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/generate_subtitles.py contents/YYYY/NN-title
+   uv run python .agents/skills/hg-presentation/scripts/generate_subtitles.py contents/YYYY/NN-title
    ```
 
 6. Render the video:
 
    ```sh
-   uv run python skills/hg-presentation/scripts/render_video.py contents/YYYY/NN-title --overwrite
+   uv run python .agents/skills/hg-presentation/scripts/render_video.py contents/YYYY/NN-title --overwrite
    ```
 
 For a no-API planning check:
 
 ```sh
-uv run python skills/hg-presentation/scripts/run_pipeline.py contents/YYYY/NN-title --dry-run
+uv run python .agents/skills/hg-presentation/scripts/run_pipeline.py contents/YYYY/NN-title --dry-run
 ```
 
 ## Notes
